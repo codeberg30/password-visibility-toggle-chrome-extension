@@ -1,15 +1,20 @@
 {
   "name": "Password visibility toggle",
-  "version": "1.0",
-  "description": "Allows user to reveal their own passwords on input fields via context menu.",
-  "manifest_version": 2,
-  "icons": { "128": "password_visibility_toggle.png" },
+  "version": "2.0",
+  "description": "Allows users to reveal their own passwords on input fields via context menu.",
+  "manifest_version": 3,
+  "icons": {
+    "128": "password_visibility_toggle.png"
+  },
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "permissions": [
-      "contextMenus"
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
   ],
   "content_scripts": [
     {
